@@ -52,6 +52,7 @@
   "homepage": "https://github.com/royriojas/have-changed#readme",
   "devDependencies": {
     "babel-cli": "^6.3.17",
+    "babel-preset-stage-0": "^6.3.13",
     "babel-preset-es2015": "^6.3.13",
     "changelogx": "^1.0.18",
     "esbeautifier": "^8.0.4",
@@ -61,7 +62,6 @@
   },
   "dependencies": {
     "clix": "^2.0.15",
-    "babel-preset-stage-0": "^6.3.13",
     "es6-promise": "^3.0.2",
     "extend": "^3.0.0",
     "flat-cache": "^1.0.10",
