@@ -63,7 +63,9 @@ const main = {
 
     this.cli = cli;
 
-    if ( this._hasChanged( file, paths, opts.force ) ) {
+    const hasChanged = this._hasChanged( file, paths, opts.force );
+
+    if ( hasChanged ) {
       cli.log( 'the file has changed' );
       if ( opts.changedCmd ) {
         cli.subtle( 'executing changedCmd', opts.changedCmd );
@@ -81,7 +83,11 @@ const main = {
       }
     }
 
-    p.then( () => this._cache.save() );
+    if ( opts.changedCmd || opts.notChangedCmd ) {
+      p.then( () => this._cache.save() );
+    } else {
+      console.log( hasChanged ); //eslint-disable-line
+    }
   }
 };
 
