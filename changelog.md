@@ -1,5 +1,10 @@
 
 # have-changed - Changelog
+## v1.0.4
+- **Features**
+  - Add option to print to stdout the result of the check - [78e6f8e]( https://github.com/royriojas/have-changed/commit/78e6f8e ), [royriojas](https://github.com/royriojas), 22/12/2015 22:36:01
+
+    
 ## v1.0.3
 - **Bug Fixes**
   - Remove babel-presets from dependencies - [b3b4669]( https://github.com/royriojas/have-changed/commit/b3b4669 ), [royriojas](https://github.com/royriojas), 22/12/2015 21:57:11
