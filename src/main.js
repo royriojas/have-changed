@@ -87,6 +87,7 @@ const main = {
       p.then( () => this._cache.save() );
     } else {
       console.log( hasChanged ); //eslint-disable-line
+      this._cache.save();
     }
   }
 };
