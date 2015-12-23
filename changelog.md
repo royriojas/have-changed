@@ -1,5 +1,10 @@
 
 # have-changed - Changelog
+## v1.0.1
+- **Bug Fixes**
+  - Add missing dependency - [a8c9d57]( https://github.com/royriojas/have-changed/commit/a8c9d57 ), [royriojas](https://github.com/royriojas), 22/12/2015 21:15:27
+
+    
 ## v1.0.0
 - **Features**
   - first working version - [e4a6765]( https://github.com/royriojas/have-changed/commit/e4a6765 ), [royriojas](https://github.com/royriojas), 22/12/2015 21:12:04
