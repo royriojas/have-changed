@@ -1,5 +1,10 @@
 
 # have-changed - Changelog
+## v1.0.3
+- **Bug Fixes**
+  - Remove babel-presets from dependencies - [b3b4669]( https://github.com/royriojas/have-changed/commit/b3b4669 ), [royriojas](https://github.com/royriojas), 22/12/2015 21:57:11
+
+    
 ## v1.0.2
 - **Bug Fixes**
   - add force option - [f4543fb]( https://github.com/royriojas/have-changed/commit/f4543fb ), [royriojas](https://github.com/royriojas), 22/12/2015 21:28:25
