@@ -1,5 +1,10 @@
 
 # have-changed - Changelog
+## v1.0.5
+- **Bug Fixes**
+  - make sure the cache is persisted to file - [73dbfda]( https://github.com/royriojas/have-changed/commit/73dbfda ), [royriojas](https://github.com/royriojas), 22/12/2015 22:57:21
+
+    
 ## v1.0.4
 - **Features**
   - Add option to print to stdout the result of the check - [78e6f8e]( https://github.com/royriojas/have-changed/commit/78e6f8e ), [royriojas](https://github.com/royriojas), 22/12/2015 22:36:01
