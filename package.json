@@ -1,6 +1,6 @@
 {
   "name": "have-changed",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A small cli util to detect if the passed JSON file have changed",
   "bin": {
     "have-changed": "dist/bin/cli.js"
