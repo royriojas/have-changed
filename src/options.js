@@ -30,6 +30,12 @@ const options = {
         alias: 'p',
         type: '[String]',
         description: 'the keys to check in the json file'
+      },
+      {
+        option: 'force',
+        alias: 'f',
+        type: 'Boolean',
+        description: 'whether to force the execution of the changedCmd'
       }
     ]
   }

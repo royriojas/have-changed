@@ -14,7 +14,7 @@ function readJSON( file ) {
 }
 
 const main = {
-  _hasChanged( file, paths = [ ] ) {
+  _hasChanged( file, paths = [ ], force ) {
     file = path.resolve( file );
     const jsonContent = readJSON( file );
 
@@ -46,7 +46,7 @@ const main = {
 
     this._cache.setKey( file, hashValue );
 
-    return hashValue !== prevValue;
+    return force || hashValue !== prevValue;
   },
   run( cli ) {
     const opts = cli.opts;
@@ -63,19 +63,19 @@ const main = {
 
     this.cli = cli;
 
-    if ( this._hasChanged( file, paths ) ) {
-      cli.log( 'the file has changed', file, paths );
+    if ( this._hasChanged( file, paths, opts.force ) ) {
+      cli.log( 'the file has changed' );
       if ( opts.changedCmd ) {
         cli.subtle( 'executing changedCmd', opts.changedCmd );
-        p = exec( opts.changedCmd ).then( () => cli.ok( 'command done!' ) );
+        p = exec( opts.changedCmd ).then( () => cli.ok( 'changedCmd done!' ) );
       } else {
         cli.subtle( 'nothing to execute' );
       }
     } else {
-      cli.log( 'the file has not changed', file, paths );
+      cli.log( 'the file has not changed' );
       if ( opts.notChangedCmd ) {
         cli.subtle( 'executing notChangedCmd', opts.notChangedCmd );
-        p = exec( opts.notChangedCmd ).then( () => cli.ok( 'command done!' ) );
+        p = exec( opts.notChangedCmd ).then( () => cli.ok( 'notChangedCmd done!' ) );
       } else {
         cli.subtle( 'nothing to execute when not changed' );
       }
