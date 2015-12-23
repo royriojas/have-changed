@@ -1,0 +1,74 @@
+{
+  "name": "have-changed",
+  "version": "0.1.0",
+  "description": "A small cli util to detect if the passed JSON file have changed",
+  "bin": {
+    "have-changed": "dist/bin/cli.js"
+  },
+  "prepush": [
+    "npm run check"
+  ],
+  "precommit": [
+    "npm run check"
+  ],
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "beautify": "esbeautifier 'src/**/*.js' 'specs/**/*.js'",
+    "beautify-check": "npm run beautify -- -k",
+    "eslint": "eslinter index.js 'src/**/*.js' 'specs/**/*.js'",
+    "eslint-fix": "npm run eslint -- --fix",
+    "autofix": "npm run beautify && npm run eslint-fix",
+    "check": "npm run beautify-check && npm run eslint",
+    "compile": "rm -rf dist && babel src -d dist",
+    "dev": "babel src -d dist --watch",
+    "prepublish": "npm run compile",
+    "test": "npm test",
+    "changelog": "changelogx -f markdown -o ./changelog.md",
+    "do-changelog": "npm run changelog && git add ./changelog.md && git commit -m 'DOC: Generate changelog' --no-verify",
+    "install-hooks": "prepush install && changelogx install-hook && precommit install",
+    "pre-v": "npm run check",
+    "post-v": "npm run do-changelog && git push --no-verify && git push --tags --no-verify",
+    "bump-major": "npm run pre-v && npm version major -m 'BLD: Release v%s' && npm run post-v",
+    "bump-minor": "npm run pre-v && npm version minor -m 'BLD: Release v%s' && npm run post-v",
+    "bump-patch": "npm run pre-v && npm version patch -m 'BLD: Release v%s' && npm run post-v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/royriojas/have-changed.git"
+  },
+  "keywords": [
+    "file",
+    "changed",
+    "json",
+    "change"
+  ],
+  "author": "royriojas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/royriojas/have-changed/issues"
+  },
+  "homepage": "https://github.com/royriojas/have-changed#readme",
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-preset-es2015": "^6.3.13",
+    "changelogx": "^1.0.18",
+    "clix": "^2.0.15",
+    "esbeautifier": "^8.0.4",
+    "eslinter": "^3.2.1",
+    "precommit": "^1.1.9",
+    "prepush": "^3.1.7"
+  },
+  "dependencies": {
+    "babel-preset-stage-0": "^6.3.13",
+    "es6-promise": "^3.0.2",
+    "extend": "^3.0.0",
+    "flat-cache": "^1.0.10",
+    "hash-string": "^1.0.0",
+    "jq-trim": "^0.1.2",
+    "json-stable-stringify": "^1.0.0",
+    "obj-util": "^2.0.0",
+    "spawnly": "^1.0.1"
+  }
+}
