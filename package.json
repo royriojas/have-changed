@@ -23,7 +23,7 @@
     "check": "npm run beautify-check && npm run eslint",
     "compile": "rm -rf dist && babel src -d dist",
     "dev": "babel src -d dist --watch",
-    "prepublish": "npm run compile",
+    "prepublish": "npm run snyk-protect; npm run compile",
     "test": "npm test",
     "changelog": "changelogx -f markdown -o ./changelog.md",
     "do-changelog": "npm run changelog && git add ./changelog.md && git commit -m 'DOC: Generate changelog' --no-verify",
@@ -32,7 +32,8 @@
     "post-v": "npm run do-changelog && git push --no-verify && git push --tags --no-verify",
     "bump-major": "npm run pre-v && npm version major -m 'BLD: Release v%s' && npm run post-v",
     "bump-minor": "npm run pre-v && npm version minor -m 'BLD: Release v%s' && npm run post-v",
-    "bump-patch": "npm run pre-v && npm version patch -m 'BLD: Release v%s' && npm run post-v"
+    "bump-patch": "npm run pre-v && npm version patch -m 'BLD: Release v%s' && npm run post-v",
+    "snyk-protect": "snyk protect"
   },
   "repository": {
     "type": "git",
@@ -69,6 +70,8 @@
     "jq-trim": "^0.1.2",
     "json-stable-stringify": "^1.0.0",
     "obj-util": "^2.0.0",
-    "spawnly": "^1.0.1"
-  }
+    "spawnly": "^1.0.1",
+    "snyk": "^1.53.0"
+  },
+  "snyk": true
 }
