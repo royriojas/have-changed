@@ -32,7 +32,9 @@
     "post-v": "npm run do-changelog && git push --no-verify && git push --tags --no-verify",
     "bump-major": "npm run pre-v && npm version major -m 'BLD: Release v%s' && npm run post-v",
     "bump-minor": "npm run pre-v && npm version minor -m 'BLD: Release v%s' && npm run post-v",
-    "bump-patch": "npm run pre-v && npm version patch -m 'BLD: Release v%s' && npm run post-v"
+    "bump-patch": "npm run pre-v && npm version patch -m 'BLD: Release v%s' && npm run post-v",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -69,6 +71,8 @@
     "jq-trim": "^0.1.2",
     "json-stable-stringify": "^1.0.0",
     "obj-util": "^2.0.0",
-    "spawnly": "^1.0.1"
-  }
+    "spawnly": "^1.0.1",
+    "snyk": "^1.105.0"
+  },
+  "snyk": true
 }
