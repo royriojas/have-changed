@@ -64,7 +64,7 @@
     "clix": "^2.0.15",
     "es6-promise": "^3.0.2",
     "extend": "^3.0.0",
-    "flat-cache": "^1.0.10",
+    "flat-cache": "^4.0.0",
     "hash-string": "^1.0.0",
     "jq-trim": "^0.1.2",
     "json-stable-stringify": "^1.0.0",
